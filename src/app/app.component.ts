@@ -9,6 +9,7 @@ import { UserStorageService } from './auth-services/storage-service/user-storage
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
   isCollapsed = false;
   isCustomerLoggedIn: boolean = false;
   isAdminLoggedIn: boolean = false;
@@ -48,4 +49,5 @@ export class AppComponent {
       window.location.reload(); // 🔹 Ensures complete logout and UI reset
     });
   }
+  
 }
