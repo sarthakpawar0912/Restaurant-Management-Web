@@ -12,7 +12,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class PostProductComponent {
 
- 
   categoryId!: number;
   productForm!: FormGroup;
   selectedFile: File | null = null;
@@ -43,7 +42,6 @@ export class PostProductComponent {
       this.message.error('Please fill all required fields!', { nzDuration: 5000 });
       return;
     }
-
     this.isSpinning = true;
 
     const formData: FormData = new FormData();
@@ -92,4 +90,5 @@ export class PostProductComponent {
   triggerFileInput(): void {
     document.getElementById('upload_product_image')?.click();
   }
+  
 }
