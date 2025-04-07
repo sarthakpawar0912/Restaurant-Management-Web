@@ -24,8 +24,6 @@ import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { DemoNgZorroAntdModule } from './DemoNgZorroAntdModule';
 import { SignupComponent } from './auth-component/signup/signup.component';
 import { LoginComponent } from './auth-component/login/login.component';
-import { AddCategoryComponent } from './modules/admin/admin-component/add-category/add-category.component';
-import { DashboardComponent } from './modules/admin/admin-component/dashboard/dashboard.component';
 
 registerLocaleData(en);
 
@@ -33,9 +31,9 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     SignupComponent,
-    LoginComponent,
-   
+    LoginComponent, 
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule, 
@@ -56,11 +54,14 @@ registerLocaleData(en);
     FormsModule,
     RouterModule
   ],
+
   providers: [
     provideNzI18n(en_US),
     provideAnimationsAsync(),
     provideHttpClient()
   ],
+
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
