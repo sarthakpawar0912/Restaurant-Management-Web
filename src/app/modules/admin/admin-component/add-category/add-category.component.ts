@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AdminService } from '../../admin-services/admin.service';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { NzMessageComponent, NzMessageService } from 'ng-zorro-antd/message';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  NzMessageService } from 'ng-zorro-antd/message';
 import { Router } from '@angular/router';
 
 @Component({
@@ -41,7 +41,6 @@ export class AddCategoryComponent {
 
     if (file) {
       this.selectedFile = file;
-
       // Show Image Preview
       const reader = new FileReader();
       reader.onload = () => {
@@ -57,7 +56,6 @@ export class AddCategoryComponent {
       this.message.error("Please select an image!", { nzDuration: 3000 });
       return;
     }
-
     const formData = new FormData();
     formData.append("img", this.selectedFile);
     formData.append("name", this.categoryForm.get("name")?.value);
@@ -84,4 +82,5 @@ export class AddCategoryComponent {
       }
     );
   }
+  
 }
