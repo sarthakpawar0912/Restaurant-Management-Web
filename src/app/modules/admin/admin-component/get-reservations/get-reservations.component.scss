@@ -256,6 +256,7 @@ nz-spin {
   z-index: 1; /* Ensure pagination is above other elements */
 }
 
+
 .ant-pagination-item,
 .ant-pagination-prev,
 .ant-pagination-next {
@@ -268,6 +269,7 @@ nz-spin {
   border: none !important; /* Remove border */
 }
 
+
 .ant-pagination-item-active {
   background-color: #7b1fa2;
   border-color: #7b1fa2;
@@ -276,6 +278,7 @@ nz-spin {
 .ant-pagination-item-active a {
   color: white;
 }
+
 
 .ant-pagination-item-active:hover {
   background-color: #6a0572;
