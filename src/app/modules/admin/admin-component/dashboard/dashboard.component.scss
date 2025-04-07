@@ -259,10 +259,12 @@ nz-footer {
         position: relative;
     }
 
+
     nz-content {
         margin-left: 0;
         width: 100%;
     }
+
 
     .category-card {
         flex-direction: column;
@@ -273,6 +275,7 @@ nz-footer {
     .category-list {
         max-height: 400px;
     }
+
 
     input[nz-input] {
         width: 80%;
@@ -298,6 +301,7 @@ nz-footer {
         margin-bottom: 15px;
     }
 
+    
     .profile-img {
         width: auto;
         height: auto;
