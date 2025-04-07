@@ -15,7 +15,6 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
-import { AppRoutingModule } from '../../app-routing.module';
 import { DemoNgZorroAntdModule } from '../../DemoNgZorroAntdModule';
 import { IconsProviderModule } from '../../icons-provider.module';
 import { ViewProductByCategoryComponent } from './customer-component/view-product-by-category/view-product-by-category.component';
@@ -26,7 +25,6 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { GetAllReservationsComponent } from './customer-component/get-all-reservations/get-all-reservations.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 
-
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -35,7 +33,8 @@ import { NzTableModule } from 'ng-zorro-antd/table';
     GetAllReservationsComponent,
     
   ],
-  imports: [ CommonModule,
+  imports: [ 
+    CommonModule,
     CustomerRoutingModule, 
     NzTableModule,
     NzCardModule,
