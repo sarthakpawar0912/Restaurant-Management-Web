@@ -10,7 +10,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class GetReservationsComponent {
 
- 
   isSpinning: boolean = true;
   reservations: any[] = []; 
 
@@ -56,4 +55,5 @@ export class GetReservationsComponent {
     const emptyRowCount = 5 - dataLength;
     return emptyRowCount > 0 ? Array(emptyRowCount).fill(0) : [];
   }
+  
 }
