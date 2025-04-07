@@ -4,8 +4,7 @@
     <div class="logo-container">
         <img src="assets/logo.png" alt="Logo" class="logo" />
     </div>
-   
-    <h2>Enter Details to Register</h2>
+   <h2>Enter Details to Register</h2>
   
     <!-- Registration Form -->
     <form nz-form [formGroup]="registerForm" (ngSubmit)="submitForm()" class="custom-form">
@@ -41,6 +40,5 @@
         <button nz-button nzType="primary" class="submit-btn" [disabled]="registerForm.invalid">
             Register
         </button>
-  
     </form>
 </div>
