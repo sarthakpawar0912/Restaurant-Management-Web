@@ -15,11 +15,14 @@
 
     <div class="category-list" *ngFor="let category of filteredCategories">
         <div nz-row class="category-card">
+            
+            
             <!-- Image Section -->
             <div nz-col nzSpan="8" class="image-container">
                 <img class="profile-img" [src]="category.processedImg" alt="category image" />
             </div>
 
+           
             <!-- Details Section -->
             <div nz-col nzSpan="16" class="category-details">
                 <h2 class="category-title">{{ category.name }}</h2>
@@ -27,14 +30,18 @@
                 <h5 class="description">Description: <b>{{ category.description }}</b></h5>
                 <hr class="divider" />
 
+                
                 <!-- Action Buttons -->
                 <div class="button-group">
+                   
                     <button nzSize="small" nz-button nzType="primary" routerLink="/admin/{{category.id}}/products">
                         View Products
                     </button>
+                    
                     <button nzSize="small" nz-button nzType="primary" class="post-btn" routerLink="/admin/{{category.id}}/product">
                         Post Product
                     </button>
+                
                 </div>
             </div>
         </div>
