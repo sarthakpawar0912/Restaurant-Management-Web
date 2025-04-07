@@ -8,6 +8,7 @@ import { UpdateProductComponent } from './admin-component/update-product/update-
 import { GetReservationsComponent } from './admin-component/get-reservations/get-reservations.component';
 
 const routes: Routes = [
+ 
   { path: 'dashboard', component:DashboardComponent},
   { path: 'category', component:AddCategoryComponent},
   { path: ':categoryId/product', component:PostProductComponent},
