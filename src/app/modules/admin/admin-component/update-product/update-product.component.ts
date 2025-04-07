@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { AdminService } from '../../admin-services/admin.service';
-import { id_ID } from 'ng-zorro-antd/i18n';
 
 @Component({
   selector: 'app-update-product',
@@ -31,7 +30,6 @@ export class UpdateProductComponent {
 
   ngOnInit(): void {
     this.productId = +this.activatedroute.snapshot.params['productId'];
-
     this.validateForm = this.fb.group({
       name: ['', Validators.required],
       price: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
@@ -65,7 +63,6 @@ export class UpdateProductComponent {
     if (this.selectedFile) {
       formData.append('img', this.selectedFile);
     }
-
     formData.append('name', this.validateForm.get('name')?.value);
     formData.append('price', this.validateForm.get('price')?.value);
     formData.append('description', this.validateForm.get('description')?.value);
@@ -107,4 +104,5 @@ export class UpdateProductComponent {
   triggerFileInput(): void {
     document.getElementById('upload_product_image')?.click();
   }
+  
 }
