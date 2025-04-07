@@ -10,19 +10,15 @@ const BASIC_URL="http://localhost:8080/";
 })
 export class AdminService {
 
-  
   constructor(private http: HttpClient,
     private userStorage:UserStorageService
   ){}
-
-
 
   postCategory(categoryDTO: any): Observable<any> {
     return this.http.post(BASIC_URL + 'api/admin/category', categoryDTO, {
       headers: this.createAuthorizationHeader(),
     });
   }
-
 
   getAllcategories(): Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin/categories', {
@@ -35,7 +31,6 @@ export class AdminService {
       headers: this.createAuthorizationHeader(),
     });
   }
-
 
   //product operations
  // ✅ Corrected API call (Fixed interpolation issue)
@@ -57,13 +52,11 @@ export class AdminService {
     });
   }
 
-
   getProductsByCategoryAndTitle(categoryId:number,title: string): Observable<any> {
     return this.http.get<[]>(`${BASIC_URL}api/admin/${categoryId}/product/${title}`, {
       headers: this.createAuthorizationHeader(),
     });
   }
-
 
   deleteProduct(productId: number): Observable<any> {
     return this.http.delete(`${BASIC_URL}api/admin/product/${productId}`, {
@@ -71,15 +64,12 @@ export class AdminService {
       observe: 'response' // Ensures full HTTP response
     });
   }
-
-   
+ 
   getProductById(productId: number): Observable<any> {
     return this.http.get(`${BASIC_URL}api/admin/product/${productId}`, {
       headers: this.createAuthorizationHeader(),
     });
   }
-
-  
 
   updateProduct(productId: number, productDTO: FormData): Observable<any> {
     const headers = this.createAuthorizationHeader();
@@ -102,7 +92,6 @@ export class AdminService {
       headers: this.createAuthorizationHeader(),
     });
   }
-  
    
   createAuthorizationHeader(){
 
