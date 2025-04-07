@@ -11,6 +11,7 @@ import { debounceTime } from 'rxjs';
   styleUrl: './view-product-by-category.component.scss'
 })
 export class ViewProductByCategoryComponent {
+ 
   categoryId: number = 0;
   validateForm!: FormGroup;
   Products: any[] = [];
@@ -27,7 +28,6 @@ export class ViewProductByCategoryComponent {
     this.validateForm = this.fb.group({
       title: ['']
     });
-
     this.categoryId = +this.activatedRoute.snapshot.params['categoryId'];
     this.getProductByCategory();
 
@@ -62,7 +62,6 @@ export class ViewProductByCategoryComponent {
       this.filteredProducts = [...this.Products];  // Reset if search is empty
       return;
     }
-
     console.log("Searching products for:", trimmedKeyword);
 
     this.isLoading = true;
