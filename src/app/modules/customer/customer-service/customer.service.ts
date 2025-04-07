@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { UserStorageService } from '../../../auth-services/storage-service/user-storage.service';
 import { Observable } from 'rxjs';
 
-
 const BASIC_URL="http://localhost:8080/";
 
 @Injectable({
@@ -27,7 +26,6 @@ export class CustomerService {
       });
     }
 
-
     //product operations
     getProductByCategory(categoryId: number): Observable<any> {
       return this.http.get(`${BASIC_URL}api/customer/${categoryId}/products`, {
@@ -35,21 +33,14 @@ export class CustomerService {
       });
     }
 
-
-
-
     getProductsByCategoryAndTitle(categoryId: number, title: string): Observable<any> {
       return this.http.get(`${BASIC_URL}api/customer/${categoryId}/products/${title}`, {
         headers: this.createAuthorizationHeader(),
       });
     }
     
-
-
     //Reservation operations
 
-
-    
     postReservation(reservationDTO:any): Observable<any> {
       reservationDTO.customerId=this.userStorage.getUserId();
       return this.http.post(`${BASIC_URL}api/customer/reservation`,reservationDTO, {
@@ -65,14 +56,9 @@ export class CustomerService {
     });
   }
 
-
-
-
-
-
   createAuthorizationHeader(){
-
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set('Authorization', 'Bearer ' + this.userStorage.getToken());
   }
+  
 }

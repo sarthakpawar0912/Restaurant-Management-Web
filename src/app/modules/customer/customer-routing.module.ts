@@ -6,12 +6,11 @@ import { PostReservationsComponent } from './customer-component/post-reservation
 import { GetAllReservationsComponent } from './customer-component/get-all-reservations/get-all-reservations.component';
 
 const routes: Routes = [
+  
   { path: 'dashboard', component:DashboardComponent},
   { path: ':categoryId/products', component:ViewProductByCategoryComponent},
   { path: 'reservation', component:PostReservationsComponent},
   { path: 'reservations', component:GetAllReservationsComponent},
-
-
 
  ];
 
