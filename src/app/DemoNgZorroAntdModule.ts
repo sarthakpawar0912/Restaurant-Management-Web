@@ -147,16 +147,18 @@ import { HttpClientModule } from '@angular/common/http';
    NzTransButtonModule,
    NzTransferModule,
    NzTreeModule,
-   NzTreeViewModule,NzTreeSelectModule,
+   NzTreeViewModule,
+   NzTreeSelectModule,
    NzTypographyModule,
    NzUploadModule,
    NzWaveModule,
    NzResizableModule,
    NzSegmentedModule,
-   NzModalModule, NzCardComponent,
-       NzCardModule,
-       NzCardGridDirective,
-       NzCardModule,
+   NzModalModule,
+   NzCardComponent,
+   NzCardModule,
+   NzCardGridDirective,
+   NzCardModule,
     NzButtonModule,
     NzGridModule,
     CommonModule,
@@ -169,7 +171,6 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppModule { }
 
 @NgModule({
-
 })
 export class DemoNgZorroAntdModule{}
 
@@ -182,6 +183,7 @@ export class DemoNgZorroAntdModule{}
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
 isClientLoggedIn: any;
 isCompanyLoggedIn: any;
 isAdminLoggedIn: any;
