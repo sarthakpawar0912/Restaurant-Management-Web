@@ -10,11 +10,10 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
+
 export class SignupComponent {
 
-
   registerForm!: FormGroup;
-
 
   constructor(
     private fb: FormBuilder,
@@ -22,7 +21,6 @@ export class SignupComponent {
     private message: NzMessageService,
     private router: Router
   ) {}
-
 
   ngOnInit() {
     this.registerForm = this.fb.group({
