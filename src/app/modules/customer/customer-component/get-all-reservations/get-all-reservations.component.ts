@@ -8,6 +8,7 @@ import { CustomerService } from '../../customer-service/customer.service';
   styleUrl: './get-all-reservations.component.scss'
 })
 export class GetAllReservationsComponent {
+  
   isSpinning: boolean = true;
   reservations: any[] = [];
 
@@ -35,4 +36,5 @@ export class GetAllReservationsComponent {
     const emptyRowCount = Math.max(0, 10 - dataLength); // Ensure at least 10 rows are displayed
     return Array(emptyRowCount).fill(0); // Create an array of empty rows
   }
+
 }
