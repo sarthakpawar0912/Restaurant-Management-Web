@@ -11,7 +11,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   templateUrl: './view-product.component.html',
   styleUrl: './view-product.component.scss'
 })
+
 export class ViewProductComponent {
+  
   categoryId: any; // Stores the category ID from the route
   validateForm!: FormGroup; // Form for search input
   Products: any[] = []; // Stores all products
@@ -105,6 +107,5 @@ export class ViewProductComponent {
       }
     });
   }
-  
   
 }
