@@ -12,8 +12,10 @@
 <!-- 🌟 Category Container -->
 <div class="container">
     <div class="category-list">
+       
         <!-- Iterate over categories -->
         <div *ngFor="let category of filteredCategories" nz-row class="category-card">
+          
             <!-- 🌟 Image Section -->
             <div nz-col nzSpan="6" class="image-container">
                 <img class="profile-img" [src]="category.processedImg" alt="category image" />
@@ -26,6 +28,7 @@
                     <hr class="divider" />
                     <h5 class="description">Description: <b>{{ category.description }}</b></h5>
                     <hr class="divider" />
+                  
                     <!-- 🌟 Action Buttons -->
                     <div class="button-group">
                         <button nzSize="small" nz-button nzType="primary" 
