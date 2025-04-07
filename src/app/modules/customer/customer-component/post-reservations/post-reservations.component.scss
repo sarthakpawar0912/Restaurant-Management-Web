@@ -84,12 +84,14 @@ button[nz-button]:hover {
     transform: scale(1.05);
 }
 
+
 /* 🌟 Responsive Design */
 @media (max-width: 600px) {
     .child {
         width: 90%;
         padding: 25px; /* Increased from 20px for mobile, still slightly larger */
     }
+
 
     button[nz-button] {
         font-size: 16px; /* Increased from 14px for mobile readability */
@@ -98,10 +100,12 @@ button[nz-button]:hover {
         height: 45px; /* Adjusted height for mobile */
     }
 
+
     nz-select,
     nz-date-picker,
     textarea[nz-input] {
         padding: 10px; /* Slightly larger than original 10px */
         font-size: 16px; /* Increased from mobile default */
     }
+    
 }

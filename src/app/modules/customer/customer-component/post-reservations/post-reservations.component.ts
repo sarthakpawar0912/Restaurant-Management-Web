@@ -47,7 +47,6 @@ export class PostReservationsComponent {
     })
   }
 
-
   postReservation() {
     if (this.validateForm.invalid) {
       this.message.warning("Please fill all required fields");
@@ -79,4 +78,5 @@ export class PostReservationsComponent {
       }
     );
   }
+  
 }
