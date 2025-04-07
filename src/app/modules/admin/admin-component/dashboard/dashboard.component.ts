@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { AdminService } from '../../admin-services/admin.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NzButtonSize } from 'ng-zorro-antd/button';
-import { Title } from '@angular/platform-browser';
-import { elementAt } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +8,9 @@ import { elementAt } from 'rxjs';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
+
 export class DashboardComponent {
+
 deleteProduct(arg0: any) {
 throw new Error('Method not implemented.');
 }
@@ -20,7 +19,7 @@ throw new Error('Method not implemented.');
   filteredCategories: any[] = [];
   validateForm!: FormGroup;
   isSpinning: boolean = false;
-filteredProducts: any;
+  filteredProducts: any;
 
   constructor(
     private service: AdminService,
@@ -61,10 +60,10 @@ filteredProducts: any;
         ...category,
         processedImg: 'data:image/jpeg;base64,' + category.returnedImg
       }));
-
       this.filteredCategories = [...this.categories]; // Show all categories initially
     });
   }
+  
 }
 
 function debounceTime(arg0: number): import("rxjs").OperatorFunction<any, unknown> {
