@@ -1,0 +1,167 @@
+/* 🌟 General Layout */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 🌟 Main Container */
+.center-form {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #6a0572, #a4508b);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🌟 Page Title */
+.page-title {
+  text-align: center;
+  color: #ffccff;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 🌟 Table Container */
+.table-container {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #4a148c;
+  position: relative;
+}
+
+/* 🌟 Table Wrapper for Fixing Alignment */
+.table-wrapper {
+  width: 100%;
+}
+
+/* 🌟 Table Styling */
+nz-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  table-layout: fixed; /* Ensures consistent column widths */
+}
+
+/* 🌟 Fix Table Header & Column Alignment */
+nz-table thead,
+nz-table tbody,
+nz-table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Ensures consistent column widths */
+}
+
+/* 🌟 Table Header */
+nz-table thead {
+  background: white;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  display: table-header-group;
+}
+
+/* 🌟 Table Header Cells */
+nz-table th {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-weight: bold;
+  color: #fff; /* Header text color */
+}
+
+/* 🌟 Custom Header Colors */
+.header-table-type {
+  background-color: #6a0572; /* Purple */
+}
+
+.header-description {
+  background-color: #a4508b; /* Lighter Purple */
+}
+
+.header-reservation-time {
+  background-color: #4a148c; /* Dark Purple */
+}
+
+.header-reservation-date {
+  background-color: #7b1fa2; /* Medium Purple */
+}
+
+.header-status {
+  background-color: #9c27b0; /* Bright Purple */
+}
+
+/* 🌟 Table Body */
+nz-table tbody {
+  display: block;
+  width: 100%;
+}
+
+/* 🌟 Table Rows */
+nz-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Ensures consistent column widths */
+  height: 40px; /* Fixed row height */
+}
+
+/* 🌟 Table Data Cells */
+nz-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 🌟 Ensure All Columns Have Equal Width */
+nz-table th,
+nz-table td {
+  width: calc(100% / 5); /* Divide table width equally among 5 columns */
+}
+
+/* 🌟 Status Column Styling */
+nz-table td[ngStyle] {
+  font-weight: bold;
+}
+
+/* 🌟 Hover Effect on Table Rows */
+nz-table tbody tr:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* 🌟 Spin Loader Styling */
+nz-spin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* 🌟 Pagination Styling */
+.ant-pagination {
+  margin-top: 16px;
+  text-align: center;
+}

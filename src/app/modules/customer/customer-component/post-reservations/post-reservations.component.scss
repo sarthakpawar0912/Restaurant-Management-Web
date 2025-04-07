@@ -1,0 +1,107 @@
+/* 🌟 Parent Container */
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; /* Increased from 80vh for a bit more vertical space */
+}
+
+/* 🌟 Child Wrapper (Form Container) */
+.child {
+    width: 600px; /* Increased from 500px for a slightly wider form */
+    background: #fff;
+    padding: 40px; /* Increased from 30px for more internal space */
+    border-radius: 14px; /* Increased from 12px for a slightly larger curve */
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for depth */
+}
+
+/* 🌟 Title Styling */
+.imgDiv h2 {
+    text-align: center;
+    font-size: 26px; /* Increased from 22px for a bigger title */
+    font-weight: bold;
+    color: #4a148c;
+    margin-bottom: 25px; /* Increased from 20px for more spacing */
+}
+
+/* 🌟 Form Styling */
+form[nz-form] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🌟 Input Fields */
+nz-form-item {
+    width: 100%;
+    margin-bottom: 20px; /* Increased from 15px for more separation */
+}
+
+/* 🌟 Select, Date Picker, and Textarea */
+nz-select,
+nz-date-picker,
+textarea[nz-input] {
+    width: 100%;
+    padding: 12px; /* Increased from 10px for larger input areas */
+    font-size: 18px; /* Increased from 16px for bigger text */
+    border: 3px solid #6a1b9a; /* Increased from 2px for a bolder border */
+    border-radius: 10px; /* Increased from 8px for a smoother look */
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+nz-select:focus,
+nz-date-picker:focus,
+textarea[nz-input]:focus {
+    border-color: #4a148c;
+    box-shadow: 0 0 6px rgba(106, 27, 154, 0.5); /* Slightly larger shadow */
+}
+
+/* 🌟 Button Container */
+.button-container {
+    text-align: center; /* Center the button horizontally */
+}
+
+/* 🌟 Button Styling */
+button[nz-button] {
+    width: 100%;
+    max-width: 200px; /* Added max-width for a more balanced size */
+    padding: 14px 25px; /* Increased from 12px 20px for a bigger button */
+    font-size: 18px; /* Increased from 16px for larger text */
+    font-weight: bold;
+    border-radius: 10px; /* Increased from 8px to match inputs */
+    background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+    color: white;
+    border: none;
+    transition: all 0.3s;
+    display: flex; /* Use flexbox to center text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 50px; /* Fixed height to ensure text stays centered */
+}
+
+button[nz-button]:hover {
+    background: linear-gradient(135deg, #4a148c, #8e24aa);
+    transform: scale(1.05);
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 600px) {
+    .child {
+        width: 90%;
+        padding: 25px; /* Increased from 20px for mobile, still slightly larger */
+    }
+
+    button[nz-button] {
+        font-size: 16px; /* Increased from 14px for mobile readability */
+        max-width: 150px; /* Adjusted for mobile */
+        padding: 12px 20px; /* Slightly reduced for mobile */
+        height: 45px; /* Adjusted height for mobile */
+    }
+
+    nz-select,
+    nz-date-picker,
+    textarea[nz-input] {
+        padding: 10px; /* Slightly larger than original 10px */
+        font-size: 16px; /* Increased from mobile default */
+    }
+}

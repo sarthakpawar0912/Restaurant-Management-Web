@@ -1,0 +1,85 @@
+/* 🌟 General Styling */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f5f5;
+  overflow: hidden; /* Prevent body scrolling */
+}
+
+/* 🌟 Layout */
+nz-layout {
+  height: 100vh;
+  display: flex;
+}
+
+/* 🌟 Fixed Sidebar */
+.sidebar {
+  background: linear-gradient(135deg, #4a148c, #7b1fa2);
+  color: #fff;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+}
+
+/* 🌟 Sidebar Menu */
+.sidebar ul[nz-menu] {
+  background: transparent;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar li[nz-menu-item] {
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+}
+
+.sidebar li[nz-menu-item]:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar span[nz-icon] {
+  color: #ffeb3b;
+}
+
+/* 🌟 Main Layout (Right Side of Sidebar) */
+.main-layout {
+  margin-left: 200px; /* To push content right of the sidebar */
+  width: calc(100% - 200px);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 🌟 Content Area (Above Footer) */
+.content {
+  flex: 1;
+  padding: 24px;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* 🌟 Fixed Footer */
+.footer {
+  background: #4a148c;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 200px;
+  width: calc(100% - 200px);
+}

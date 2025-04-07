@@ -1,0 +1,35 @@
+
+
+  <!-- Product List -->
+  <div class="product-container">
+    <div *ngIf="isLoading" class="loading-spinner">
+      <nz-spin nzTip="Loading Products..."></nz-spin>
+    </div>
+  
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <div nz-row class="product-row child">
+        
+        <!-- Product Image -->
+        <div nz-col nzSpan="8" class="product-image-container">
+          <img class="product-image" [src]="product.processedImg || 'assets/default-product.png'" alt="Product Image" />
+        </div>
+  
+        <!-- Product Details -->
+        <div nz-col nzSpan="16" class="product-details">
+          <h2 class="product-title">{{ product.name }}</h2>
+          <hr />
+          <h5 class="product-info">
+            Price: <b>{{ product.price | currency:'INR' }}</b> <br />
+            Description: <b>{{ product.description }}</b> <br />
+            Category: <b>{{ product.categoryName }}</b>
+          </h5>
+          <hr />
+        </div>
+        
+      </div>
+    </div>
+  
+    <div *ngIf="filteredProducts.length === 0 && !isLoading" class="no-products">
+      <p>No products found.</p>
+    </div>
+  </div>

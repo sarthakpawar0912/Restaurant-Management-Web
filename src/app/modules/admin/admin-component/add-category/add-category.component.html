@@ -1,0 +1,58 @@
+<div class="parent">
+  <div class="child">
+    <!-- Page Heading -->
+    <div nz-row class="imgDiv">
+      <h2>Add Category</h2>
+    </div>
+
+    <!-- Form Begins -->
+    <form nz-form [formGroup]="categoryForm">
+      <div nz-row>
+        <div nz-col [nzMd]="24" [nzSm]="24" [nzXs]="24">
+          <div class="profile-badge">
+            <!-- Image Preview (If File is Selected) -->
+            <label for="upload_category_image" class="upload-label">
+              <img class="profile" [src]="imagePreview || 'assets/default-image.png'" alt="category" />
+            </label>
+
+            <!-- Hidden File Input -->
+            <input 
+              type="file" 
+              id="upload_category_image" 
+              accept="image/x-png,image/gif,image/jpeg" 
+              hidden 
+              (change)="onFileSelected($event)">
+
+            <!-- Upload Button -->
+            <button nz-button nzType="primary" (click)="triggerFileInput()" type="button">
+              Upload Image
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Name Input Field -->
+      <div nz-col nzSpan="24" style="margin-top: 20px;">
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="This field is required!">
+            <input nz-input placeholder="Category Name" required formControlName="name" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <!-- Description Input Field -->
+      <div nz-col nzSpan="24" style="margin-top: 20px;">
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="This field is required!">
+            <textarea nz-input placeholder="Description" rows="3" required formControlName="description"></textarea>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <!-- Submit Button -->
+      <div nz-col nzSpan="24" style="margin-top: 20px; text-align: center;">
+        <button nz-button nzType="primary" (click)="postCategory()">ADD CATEGORY</button>
+      </div>
+    </form>
+  </div>
+</div>

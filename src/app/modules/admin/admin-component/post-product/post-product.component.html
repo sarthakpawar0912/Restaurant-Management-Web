@@ -1,0 +1,73 @@
+<div class="parent">
+    <div class="child">
+      <!-- Page Heading -->
+      <div nz-row class="imgDiv">
+        <h2>Post Product</h2>
+      </div>
+  
+      <!-- Form Begins -->
+      <form nz-form [formGroup]="productForm" (ngSubmit)="submitForm()">
+        
+        <!-- Image Upload Section -->
+        <div nz-row>
+          <div nz-col [nzMd]="24" [nzSm]="24" [nzXs]="24">
+            <div class="profile-badge">
+              <!-- Image Preview -->
+              <label for="upload_product_image" class="upload-label">
+                <img class="profile" [src]="imagePreview || 'assets/default-product.png'" alt="product" />
+              </label>
+  
+              <!-- Hidden File Input -->
+              <input 
+                type="file" 
+                id="upload_product_image" 
+                accept="image/x-png,image/gif,image/jpeg" 
+                hidden 
+                (change)="onFileSelected($event)">
+  
+              <!-- Upload Button -->
+              <button nz-button nzType="primary" (click)="triggerFileInput()" type="button">
+                Upload Image
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Product Name Input -->
+        <div nz-col nzSpan="24" style="margin-top: 20px;">
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="Product name is required!">
+              <input nz-input placeholder="Product Name" required formControlName="name" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+  
+        <!-- Price Input -->
+        <div nz-col nzSpan="24" style="margin-top: 20px;">
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="Price is required!">
+              <input nz-input type="number" placeholder="Price" required formControlName="price" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+  
+        <!-- Description Input -->
+        <div nz-col nzSpan="24" style="margin-top: 20px;">
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="Description is required!">
+              <textarea nz-input placeholder="Product Description" rows="3" required formControlName="description"></textarea>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+  
+        <!-- Submit Button -->
+        <div nz-col nzSpan="24" style="margin-top: 20px; text-align: center;">
+          <button nz-button nzType="primary" [disabled]="productForm.invalid">
+            ADD PRODUCT
+          </button>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

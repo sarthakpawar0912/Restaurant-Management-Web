@@ -1,0 +1,180 @@
+/* 🌟 General Layout */
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+/* 🌟 Form Card */
+.child {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 90%;
+  text-align: center;
+  border: 2px solid #6a1b9a; /* Added border */
+}
+
+/* 🌟 Title - Centered */
+.imgDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.imgDiv h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #6a1b9a;
+  text-align: center;
+}
+
+/* 🌟 Image Upload Section */
+.profile-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.upload-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6a1b9a;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile:hover {
+  transform: scale(1.05);
+  border-color: #4a148c;
+}
+
+/* 🌟 Input Fields with Border */
+.input-container {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 2px solid #6a1b9a;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fdf7ff; /* Light background */
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🌟 Input Fields */
+.styled-input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+}
+
+/* 🌟 Focus & Hover Effect */
+.input-container:hover, 
+.input-container:focus-within {
+  border-color: #ab47bc;
+  box-shadow: 0 0 8px rgba(171, 71, 188, 0.6);
+}
+
+/* 🌟 Specific Styling for Input & Textarea */
+input[nz-input], 
+textarea[nz-input] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #6a1b9a !important; /* Border color added */
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  background: #fdf7ff; /* Light background */
+  transition: all 0.3s ease-in-out;
+}
+
+input[nz-input]:focus, 
+textarea[nz-input]:focus {
+  border-color: #ab47bc !important;
+  box-shadow: 0 0 5px rgba(171, 71, 188, 0.6);
+}
+
+/* 🌟 Buttons */
+button {
+  font-size: 16px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;  
+  justify-content: center; 
+  width: 180px;
+  height: 45px; 
+  font-weight: bold;
+  margin: auto;
+}
+
+/* 🌟 Hover Effect */
+button:hover {
+  background: linear-gradient(135deg, #4a148c, #8e24aa);
+  transform: scale(1.05);
+}
+
+/* 🌟 Disable State */
+button:disabled {
+  background: linear-gradient(135deg, #cccccc, #aaaaaa);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 🌟 Submit Button */
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Increased margin for better spacing */
+}
+
+/* 🌟 Add Category Button */
+.add-category-btn {
+  width: 180px;
+  height: 45px;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 600px) {
+  .child {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .profile {
+      height: 110px;
+      width: 110px;
+  }
+
+  .upload-btn,
+  .add-category-btn {
+      font-size: 14px;
+      width: 150px;
+      height: 40px;
+  }
+}

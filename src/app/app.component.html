@@ -1,0 +1,64 @@
+<nz-layout>
+  <!-- Sidebar (Fixed Left) -->
+  <nz-sider nzWidth="200px" class="sidebar">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item routerLink="/signup" *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+        <span nz-icon nzType="user"></span>
+        <span><strong>Register</strong></span>
+      </li>
+      <li nz-menu-item routerLink="/" *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+        <span nz-icon nzType="login"></span>
+        <span><strong>Login</strong></span>
+      </li>
+
+      <li nz-menu-item routerLink="/admin/dashboard" *ngIf="isAdminLoggedIn">
+        <span nz-icon nzType="apartment"></span>
+        <span><strong>Dashboard</strong></span>
+      </li>
+      <li nz-menu-item routerLink="/admin/category" *ngIf="isAdminLoggedIn">
+        <span nz-icon nzType="folder-add"></span>
+        <span><strong>Add Category</strong></span>
+      </li>
+
+      <li nz-menu-item routerLink="/admin/reservations" *ngIf="isAdminLoggedIn">
+        <span nz-icon nzType="folder-add"></span>
+        <span><strong>Reservations</strong></span>
+      </li>
+    
+     
+
+      <li nz-menu-item routerLink="/customer/dashboard" routerLinkActive="active" *ngIf="isCustomerLoggedIn">
+        <span nz-icon nzType="dashboard"></span>
+        <span><strong>Dashboard</strong></span>
+      </li>
+      
+      <li nz-menu-item routerLink="/customer/reservation" *ngIf="isCustomerLoggedIn">
+        <span nz-icon nzType="schedule"></span>
+        <span><strong>Reservation</strong></span>
+      </li>
+
+      <li nz-menu-item routerLink="/customer/reservations" *ngIf="isCustomerLoggedIn">
+        <span nz-icon nzType="schedule"></span>
+        <span><strong>Reservations</strong></span>
+      </li>
+
+      <li nz-menu-item (click)="logout()" *ngIf="isAdminLoggedIn || isCustomerLoggedIn">
+        <span nz-icon nzType="logout"></span>
+        <span><strong>Logout</strong></span>
+      </li>
+    </ul>
+  </nz-sider>
+
+  <!-- Main Content Area -->
+  <nz-layout class="main-layout">
+    <nz-content class="content">
+      <router-outlet></router-outlet>
+    </nz-content>
+
+    <!-- Fixed Footer -->
+    <nz-footer class="footer">
+      <p>© 2025 Hotel Management System</p>
+    </nz-footer>
+  </nz-layout>
+</nz-layout>

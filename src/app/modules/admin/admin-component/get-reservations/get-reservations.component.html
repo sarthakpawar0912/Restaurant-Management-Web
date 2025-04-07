@@ -1,0 +1,83 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Loading reservations...">
+  <div class="center-form">
+    <h2 class="page-title">Reservation List</h2>
+
+    <div class="table-container">
+      <div class="table-wrapper">
+        <nz-table
+          #basicTable
+          [nzData]="reservations"
+          [nzBordered]="true"
+          [nzPageSize]="5"
+          [nzShowPagination]="true"
+        >
+          <thead>
+            <tr>
+              <th class="header-username">Username</th>
+              <th class="header-table-type">Table Type</th>
+              <th class="header-description">Description</th>
+              <th class="header-reservation-time">Reservation Time</th>
+              <th class="header-reservation-date">Reservation Date</th>
+              <th class="header-status">Status</th>
+              <th class="header-actions">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let reservation of basicTable.data">
+              <td><strong>{{ reservation.customerName }}</strong></td>
+              <td><strong>{{ reservation.tableType }}</strong></td>
+              <td><strong>{{ reservation.description }}</strong></td>
+              <td><strong>{{ reservation.dateTime | date: 'h:mm a' }}</strong></td>
+              <td><strong>{{ reservation.dateTime | date: 'yyyy-MM-dd' }}</strong></td>
+              <td>
+                <strong 
+                  [ngStyle]="{'color': reservation.reservationStatus === 'APPROVED' ? '#4CAF50' : 
+                                     reservation.reservationStatus === 'DISAPPROVED' ? '#F44336' : 
+                                     '#FF9800'}">
+                  {{ reservation.reservationStatus }}
+                </strong>
+              </td>
+              <td class="actions-cell">
+                <div class="button-container">
+                  <button
+                    *ngIf="reservation.reservationStatus === 'PENDING'"
+                    nz-button
+                    class="approve-btn"
+                    nzSize="small"
+                    nz-tooltip
+                    nzTooltipTitle="Approve"
+                    (click)="changeReservationStatus(reservation.id, 'APPROVE')"
+                  >
+                    <i nz-icon nzType="check" nzTheme="outline"></i>
+                  </button>
+                  <button
+                    *ngIf="reservation.reservationStatus === 'PENDING'"
+                    nz-button
+                    class="disapprove-btn"
+                    nzSize="small"
+                    nz-tooltip
+                    nzTooltipTitle="Disapprove"
+                    (click)="changeReservationStatus(reservation.id, 'DISAPPROVE')"
+                  >
+                    <i nz-icon nzType="close" nzTheme="outline"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!-- Add empty rows if there are fewer than 5 rows -->
+            <tr *ngFor="let emptyRow of getEmptyRows(basicTable.data.length)">
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </div>
+    </div>
+  </div>
+</nz-spin>

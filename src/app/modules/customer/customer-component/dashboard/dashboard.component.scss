@@ -1,0 +1,328 @@
+/* 🌟 General Styling */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 🌟 Layout Styles */
+nz-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* 🌟 Sidebar Styling */
+nz-sider {
+    background: linear-gradient(135deg, #4a148c, #7b1fa2);
+    color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+}
+
+/* 🌟 Main Content */
+nz-content {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+/* 🌟 Search Form Styling */
+form[nz-form] {
+    margin: 20px 0;
+    text-align: center;
+}
+
+input[nz-input] {
+    width: 50%; /* Increased from 25% to match broader entities like .container */
+    max-width: 700px; /* Half of .container max-width (1400px) for consistency */
+    padding: 20px; /* Increased from 10px to match .category-card padding */
+    border: 2px solid #6a1b9a;
+    border-radius: 12px; /* Increased from 8px to match .category-card */
+    font-size: 24px; /* Increased from 16px to match .category-title */
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15); /* Match .category-card shadow */
+}
+
+input[nz-input]:focus {
+    border-color: #4a148c;
+    box-shadow: 0 0 5px rgba(106, 27, 154, 0.5);
+}
+
+/* 🌟 Search Button */
+button[nz-button] {
+    margin-left: 15px;
+    font-size: 16px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+    border-radius: 8px;
+    color: white;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🌟 Search Button States */
+button[nz-button]:hover {
+    background: linear-gradient(135deg, #4a148c, #8e24aa);
+    transform: scale(1.05);
+}
+
+button[nz-button]:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* 🌟 Category Container */
+.container {
+    background-color: #ffffff;
+    padding: 30px; /* Increased padding for larger feel */
+    border-radius: 10px;
+    max-width: 1400px; /* Increased from 1200px to make it larger */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* 🌟 Category List with Scroll */
+.category-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f5f5f5;
+}
+
+/* 🌟 Custom Scrollbar */
+.category-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.category-list::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.category-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 🌟 Category Card */
+.category-card {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to ensure side-by-side layout */
+    align-items: stretch;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 🌟 Image Styling */
+.image-container {
+    flex: 0 0 200px; /* Fixed width for the image section */
+    max-width: 200px; /* Ensure it doesn’t grow beyond this */
+    height: 100%; /* Match the card height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px; /* Add spacing between image and details */
+}
+
+.profile-img {
+    width: 100%; /* Fill the container width */
+    height: 100%; /* Fill the container height */
+    border-radius: 12px;
+    object-fit: cover; /* Fit the image fully, cropping if necessary */
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+/* 🌟 Category Details */
+.category-details {
+    flex: 1; /* Take remaining space */
+    min-width: 0; /* Prevent overflow */
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Fill the card height */
+    width: 100%; /* Ensure it stays within bounds */
+}
+
+.category-title {
+    font-size: 24px;
+    margin: 0 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Keep title single-line */
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 16px;
+    margin: 10px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%; /* Prevent overflow */
+}
+
+/* 🌟 Buttons Container */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: auto; /* Push buttons to bottom */
+}
+
+/* 🌟 Common Button Styles */
+.button-group button {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+}
+
+/* 🌟 View Products Button */
+.button-group button:nth-child(1) {
+    background: linear-gradient(135deg, #1565c0, #1e88e5);
+    color: white;
+    border: none;
+}
+
+.button-group button:nth-child(1):hover {
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    transform: scale(1.05);
+}
+
+/* 🌟 Post Product Button */
+.post-btn {
+    background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+    color: white;
+    border: none;
+}
+
+.post-btn:hover {
+    background: linear-gradient(135deg, #4a148c, #8e24aa);
+    transform: scale(1.05);
+}
+
+/* 🌟 Footer */
+nz-footer {
+    background: #4a148c;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+    nz-layout {
+        flex-direction: column;
+    }
+
+    nz-sider {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+    }
+
+    nz-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .category-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .category-list {
+        max-height: 400px;
+    }
+
+    input[nz-input] {
+        width: 80%; /* Increased from 60% for mobile consistency */
+        max-width: 200px; /* Match .image-container max-width on mobile */
+        padding: 15px; /* Slightly reduced for mobile */
+        font-size: 18px; /* Adjusted for mobile */
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+
+    .category-details {
+        padding-left: 0;
+        padding-top: 15px;
+    }
+
+    .image-container {
+        margin-bottom: 15px;
+        width: 100%; /* Full width on mobile */
+        max-width: 200px; /* Maintain max size */
+        height: 140px; /* Fixed height on mobile for consistency */
+        padding-right: 0;
+    }
+
+    .profile-img {
+        width: 100%; /* Full width on mobile */
+        height: 100%; /* Match container height */
+        max-width: 200px; /* Maintain max size */
+    }
+}

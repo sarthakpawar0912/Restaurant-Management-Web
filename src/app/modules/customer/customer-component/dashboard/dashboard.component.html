@@ -1,0 +1,40 @@
+<!-- 🌟 Search Form -->
+<form nz-form [formGroup]="validateForm" class="search-form">
+    <input 
+        nz-input 
+        placeholder="Enter Keyword to Search" 
+        nzSize="large" 
+        formControlName="title"
+        (ngModelChange)="onSearchChange()"
+    />
+</form>
+
+<!-- 🌟 Category Container -->
+<div class="container">
+    <div class="category-list">
+        <!-- Iterate over categories -->
+        <div *ngFor="let category of filteredCategories" nz-row class="category-card">
+            <!-- 🌟 Image Section -->
+            <div nz-col nzSpan="6" class="image-container">
+                <img class="profile-img" [src]="category.processedImg" alt="category image" />
+            </div>
+
+            <!-- 🌟 Details Section -->
+            <div nz-col nzSpan="18" class="category-details">
+                <div class="details-wrapper">
+                    <h2 class="category-title">{{ category.name }}</h2>
+                    <hr class="divider" />
+                    <h5 class="description">Description: <b>{{ category.description }}</b></h5>
+                    <hr class="divider" />
+                    <!-- 🌟 Action Buttons -->
+                    <div class="button-group">
+                        <button nzSize="small" nz-button nzType="primary" 
+                            routerLink="/customer/{{category.id}}/products">
+                            View Products
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

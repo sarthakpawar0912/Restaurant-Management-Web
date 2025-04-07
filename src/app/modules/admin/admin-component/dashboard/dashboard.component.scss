@@ -1,0 +1,312 @@
+/* 🌟 General Styling */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 🌟 Layout Styles */
+nz-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* 🌟 Sidebar Styling */
+nz-sider {
+    background: linear-gradient(135deg, #4a148c, #7b1fa2);
+    color: #fff;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 220px;
+}
+
+/* 🌟 Main Content */
+nz-content {
+    margin-left: 220px;
+    padding: 20px;
+    width: calc(100% - 220px);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+/* 🌟 Search Form Styling */
+.search-form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+input[nz-input] {
+    width: 50%;
+    max-width: 700px;
+    padding: 20px;
+    border: 2px solid #6a1b9a;
+    border-radius: 12px;
+    font-size: 24px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+input[nz-input]:focus {
+    border-color: #4a148c;
+    box-shadow: 0 0 5px rgba(106, 27, 154, 0.5);
+}
+
+/* 🌟 Category Container */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 1400px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 20px auto;
+}
+
+/* 🌟 Centered Add Category Title */
+.add-category-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a148c;
+    margin-bottom: 20px;
+}
+
+/* 🌟 Category List */
+.category-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f5f5f5;
+}
+
+/* 🌟 Custom Scrollbar */
+.category-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.category-list::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.category-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 🌟 Category Card */
+.category-card {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 🌟 Image Styling */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* Adjust to image width */
+    height: auto; /* Adjust to image height */
+    max-width: 260px; /* Cap width to prevent overflow */
+    max-height: 180px; /* Cap height to prevent overflow */
+    padding-right: 20px;
+}
+
+.profile-img {
+    width: auto; /* Use natural image width */
+    height: auto; /* Use natural image height */
+    max-width: 260px; /* Maximum width constraint */
+    max-height: 180px; /* Maximum height constraint */
+    border-radius: 12px;
+    object-fit: contain; /* Show full image without cropping */
+    border: 3px solid #ddd;
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease;
+}
+
+/* 🌟 Category Details */
+.category-details {
+    flex: 1;
+    min-width: 0;
+    padding-left: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4a148c;
+    margin: 0 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 16px;
+    margin: 10px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+/* 🌟 Buttons */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: auto;
+}
+
+.button-group button {
+    padding: 14px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+}
+
+/* 🌟 View Products Button */
+.button-group button:nth-child(1) {
+    background: linear-gradient(135deg, #1565c0, #1e88e5);
+    color: white;
+    border: none;
+}
+
+.button-group button:nth-child(1):hover {
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    transform: scale(1.05);
+}
+
+/* 🌟 Post Product Button */
+.post-btn {
+    background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+    color: white;
+    border: none;
+}
+
+.post-btn:hover {
+    background: linear-gradient(135deg, #4a148c, #8e24aa);
+    transform: scale(1.05);
+}
+
+/* 🌟 Footer */
+nz-footer {
+    background: #4a148c;
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+    nz-layout {
+        flex-direction: column;
+    }
+
+    nz-sider {
+        width: 100% !important;
+        min-height: auto;
+        position: relative;
+    }
+
+    nz-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .category-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .category-list {
+        max-height: 400px;
+    }
+
+    input[nz-input] {
+        width: 80%;
+        max-width: 200px;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+
+    .image-container {
+        width: auto;
+        max-width: 200px; /* Adjusted for mobile */
+        max-height: 140px; /* Adjusted for mobile */
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .profile-img {
+        width: auto;
+        height: auto;
+        max-width: 200px; /* Adjusted for mobile */
+        max-height: 140px; /* Adjusted for mobile */
+    }
+
+    .category-details {
+        padding-left: 0;
+        padding-top: 15px;
+    }
+}

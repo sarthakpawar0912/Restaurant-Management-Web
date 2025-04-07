@@ -1,0 +1,42 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Loading reservations...">
+  <nz-table #basicTable [nzData]="reservations" [nzBordered]="true" [nzPageSize]="10" [nzShowPagination]="true">
+    <!-- Table Header -->
+    <thead>
+      <tr>
+        <th class="header-table-type">Table Type</th>
+        <th class="header-description">Description</th>
+        <th class="header-reservation-time">Reservation Time</th>
+        <th class="header-reservation-date">Reservation Date</th>
+        <th class="header-status">Status</th>
+      </tr>
+    </thead>
+
+    <!-- Table Body -->
+    <tbody>
+      <!-- Display actual data -->
+      <tr *ngFor="let reservation of basicTable.data">
+        <td><strong>{{ reservation.tableType }}</strong></td>
+        <td><strong>{{ reservation.description }}</strong></td>
+        <td><strong>{{ reservation.dateTime | date: 'h:mm a' }}</strong></td>
+        <td><strong>{{ reservation.dateTime | date: 'yyyy-MM-dd' }}</strong></td>
+        <td>
+          <strong 
+            [ngStyle]="{'color': reservation.reservationStatus === 'APPROVED' ? '#4CAF50' : 
+                                reservation.reservationStatus === 'DECLINED' ? '#F44336' : 
+                                '#FF9800'}">
+            {{ reservation.reservationStatus }}
+          </strong>
+        </td>
+      </tr>
+
+      <!-- Add empty rows if there are fewer than 10 responses -->
+      <tr *ngFor="let emptyRow of getEmptyRows(basicTable.data.length)">
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-spin>

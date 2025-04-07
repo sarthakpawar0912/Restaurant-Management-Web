@@ -1,0 +1,53 @@
+<!-- 🌟 Search Section -->
+<form nz-form [formGroup]="validateForm" style="margin-top: 20px; text-align: center;">
+  <input 
+      nz-input 
+      placeholder="Enter Keyword to Search" 
+      nzSize="large" 
+      style="width: 20%;" 
+      formControlName="title"
+      (ngModelChange)="onSearchChange()"
+  />
+</form>
+
+<!-- 🌟 Product Container -->
+<div class="container">
+  <h2 class="section-title">PRODUCTS</h2> <!-- Centered Title -->
+
+  <div class="product-list">
+      <div *ngFor="let product of filteredProducts" class="product-card">
+          <div nz-row class="product-card-row">
+              <!-- 🌟 Product Image -->
+              <div nz-col nzSpan="8" class="image-container">
+                  <img class="product-img" [src]="product.processedImg" alt="product" />
+              </div>
+
+              <!-- 🌟 Product Details -->
+              <div nz-col nzSpan="16" class="product-details">
+                  <h2 class="product-title">
+                      {{ product.name }}
+                  </h2>
+                  <hr />
+                  <h5 class="product-description">
+                    <span>Price: <b>₹{{ product.price }}</b></span>
+                    <span>Description: <b>{{ product.description }}</b></span>
+                    <span>Category: <b>{{ product.categoryName }}</b></span>
+                </h5>
+                
+                  <hr />
+
+                  <!-- 🌟 Action Buttons -->
+                  <div class="button-group">
+                      <button nz-button nzType="primary" [routerLink]="['/admin/product', product.id, 'update']">
+                          Update
+                      </button>
+
+                      <button nz-button nzSize="small" nzType="primary" (click)="deleteProduct(product.id)" nzDanger>
+                          Delete
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
