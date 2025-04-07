@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { AdminService } from '../../../admin/admin-services/admin.service';
 import { CustomerService } from '../../customer-service/customer.service';
 
 @Component({
@@ -11,13 +10,11 @@ import { CustomerService } from '../../customer-service/customer.service';
 })
 export class DashboardComponent {
 
-
-
   categories: any[] = [];
   filteredCategories: any[] = [];
   validateForm!: FormGroup;
   isSpinning: boolean = false;
-filteredProducts: any;
+  filteredProducts: any;
 
   constructor(
     private service: CustomerService,
@@ -62,6 +59,7 @@ filteredProducts: any;
       this.filteredCategories = [...this.categories]; // Show all categories initially
     });
   }
+  
 }
 
 function debounceTime(arg0: number): import("rxjs").OperatorFunction<any, unknown> {
