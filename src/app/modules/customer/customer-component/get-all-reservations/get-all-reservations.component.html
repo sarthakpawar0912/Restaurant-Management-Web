@@ -1,5 +1,6 @@
 <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Loading reservations...">
   <nz-table #basicTable [nzData]="reservations" [nzBordered]="true" [nzPageSize]="10" [nzShowPagination]="true">
+   
     <!-- Table Header -->
     <thead>
       <tr>
@@ -13,6 +14,7 @@
 
     <!-- Table Body -->
     <tbody>
+     
       <!-- Display actual data -->
       <tr *ngFor="let reservation of basicTable.data">
         <td><strong>{{ reservation.tableType }}</strong></td>
@@ -29,6 +31,7 @@
         </td>
       </tr>
 
+      
       <!-- Add empty rows if there are fewer than 10 responses -->
       <tr *ngFor="let emptyRow of getEmptyRows(basicTable.data.length)">
         <td>&nbsp;</td>
@@ -38,5 +41,6 @@
         <td>&nbsp;</td>
       </tr>
     </tbody>
+    
   </nz-table>
 </nz-spin>
