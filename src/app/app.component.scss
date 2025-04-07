@@ -47,6 +47,7 @@ nz-layout {
   background: rgba(255, 255, 255, 0.2);
 }
 
+
 .sidebar span[nz-icon] {
   color: #ffeb3b;
 }
@@ -60,6 +61,7 @@ nz-layout {
   height: 100vh;
 }
 
+
 /* 🌟 Content Area (Above Footer) */
 .content {
   flex: 1;
@@ -70,6 +72,7 @@ nz-layout {
   align-items: flex-start; /* Align items to the top */
   overflow-y: auto; /* Enable vertical scrolling */
 }
+
 
 /* 🌟 Fixed Footer */
 .footer {
