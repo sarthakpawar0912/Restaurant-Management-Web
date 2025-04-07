@@ -12,10 +12,10 @@ import { UserStorageService } from '../../auth-services/storage-service/user-sto
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+
   loginForm!: FormGroup;
   isAdminLoggedIn: boolean = false;
   isCustomerLoggedIn: boolean = false;
-
 
   constructor(
     private fb: FormBuilder,
@@ -25,7 +25,6 @@ export class LoginComponent {
     private userStorage: UserStorageService,
     private cdr: ChangeDetectorRef
   ) {}
-
 
 
   ngOnInit() {
@@ -41,7 +40,6 @@ export class LoginComponent {
       this.cdr.detectChanges(); // 🔴 Force UI update
     });
   }
-
 
   submitForm() {
     if (this.loginForm.invalid) {
